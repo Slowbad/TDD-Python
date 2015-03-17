@@ -1,3 +1,7 @@
-$('input').on('keypress', function() {
-	$('.has-error').hide();
-});
+SetInputEvents = function() {
+	$('input[name="text"]').on('keypress click', function() {
+		$('.has-error').hide();
+	});
+};
+
+SetInputEvents();
