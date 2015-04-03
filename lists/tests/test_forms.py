@@ -5,6 +5,7 @@ from lists.forms import (
 )
 from lists.models import Item, List
 
+
 class ItemFormTest(TestCase):
 
     def test_form_renders_item_text_input(self):
@@ -27,6 +28,7 @@ class ItemFormTest(TestCase):
         self.assertEqual(new_item, Item.objects.first())
         self.assertEqual(new_item.text, 'do me')
         self.assertEqual(new_item.list, list_)
+
 
 class ExistingListItemFormTest(TestCase):
 
@@ -56,4 +58,3 @@ class ExistingListItemFormTest(TestCase):
         form = ExistingListItemForm(for_list=list_, data={'text': 'hi'})
         new_item = form.save()
         self.assertEqual(new_item, Item.objects.all()[0])
-

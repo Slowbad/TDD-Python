@@ -1,6 +1,5 @@
 from .base import FunctionalTest
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+
 
 class ItemValidationTest(FunctionalTest):
 
@@ -76,4 +75,3 @@ class ItemValidationTest(FunctionalTest):
         # She is pleased to tsee that the error message disappears
         error = self.get_error_element()
         self.assertFalse(error.is_displayed())
-

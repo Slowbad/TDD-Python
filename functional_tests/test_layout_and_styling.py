@@ -1,6 +1,5 @@
 from .base import FunctionalTest
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+
 
 class LayoutAndStylingTest(FunctionalTest):
 
@@ -24,4 +23,3 @@ class LayoutAndStylingTest(FunctionalTest):
             512,
             delta=5
         )
-

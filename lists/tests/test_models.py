@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from lists.models import Item, List
 
+
 class ItemModelTest(TestCase):
 
     def test_default_text(self):
@@ -34,7 +35,7 @@ class ItemModelTest(TestCase):
         list2 = List.objects.create()
         Item.objects.create(list=list1, text='bla')
         item = Item(list=list2, text='bla')
-        item.full_clean() # should not raise
+        item.full_clean()  # should not raise
 
     def test_list_ordering(self):
         list1 = List.objects.create()
@@ -56,4 +57,3 @@ class ListModelTest(TestCase):
     def test_get_absolute_url(self):
         list_ = List.objects.create()
         self.assertEqual(list_.get_absolute_url(), '/lists/%d/' % (list_.id,))
-
